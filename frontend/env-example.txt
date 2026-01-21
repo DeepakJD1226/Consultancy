@@ -1,0 +1,2 @@
+//  Environment variables file - add your actual values here
+NEXT_PUBLIC_API_URL=http://localhost:5000

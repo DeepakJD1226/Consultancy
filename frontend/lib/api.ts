@@ -1,4 +1,4 @@
-// API Client for communicating with Flask backend
+// API Client for communicating with Node.js backend
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 class APIClient {

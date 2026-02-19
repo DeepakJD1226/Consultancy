@@ -123,7 +123,7 @@ export default function NewOrderPage() {
 
     return (
         <div className="p-8 max-w-4xl mx-auto">
-            <h1 className="text-3xl font-bold text-gray-900 mb-6">📞 New Phone Order</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-6">New Phone Order</h1>
 
             <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-6 space-y-6">
                 {/* Customer Search */}
@@ -148,7 +148,7 @@ export default function NewOrderPage() {
 
                     {selectedCustomer && (
                         <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-                            <p className="font-semibold text-green-900">✓ Customer Found</p>
+                            <p className="font-semibold text-green-900">Customer Found</p>
                             <p className="text-green-700 mt-1"><strong>Name:</strong> {selectedCustomer.name}</p>
                             <p className="text-green-700"><strong>Business:</strong> {selectedCustomer.business_type || 'N/A'}</p>
                         </div>
@@ -193,7 +193,7 @@ export default function NewOrderPage() {
                     {availability && (
                         <div className={`p-4 rounded-lg ${availability.available ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'} border`}>
                             <p className={`font-semibold ${availability.available ? 'text-green-900' : 'text-red-900'}`}>
-                                {availability.available ? '✓ Stock Available' : '✗ Insufficient Stock'}
+                                {availability.available ? 'Stock Available' : 'Insufficient Stock'}
                             </p>
                             <p className={availability.available ? 'text-green-700' : 'text-red-700'}>
                                 Available: {availability.available_quantity}m | Requested: {availability.requested_quantity}m

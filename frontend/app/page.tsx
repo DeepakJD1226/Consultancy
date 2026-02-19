@@ -51,28 +51,24 @@ export default function Home() {
         <StatsCard
           title="Total Customers"
           value={stats?.customers?.total || 0}
-          icon="👥"
           color="blue"
         />
         <StatsCard
           title="Total Orders"
           value={stats?.orders?.total || 0}
           subtitle={`${stats?.orders?.pending || 0} pending`}
-          icon="📦"
           color="green"
         />
         <StatsCard
           title="Total Revenue"
           value={`₹${stats?.revenue?.total?.toLocaleString() || 0}`}
           subtitle={`₹${stats?.revenue?.pending_payments?.toLocaleString() || 0} pending`}
-          icon="💰"
           color="yellow"
         />
         <StatsCard
           title="Inventory Value"
           value={`₹${stats?.inventory?.total_value?.toLocaleString() || 0}`}
           subtitle={`${stats?.inventory?.low_stock_items || 0} low stock items`}
-          icon="📊"
           color="red"
         />
       </div>

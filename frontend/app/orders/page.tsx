@@ -39,7 +39,7 @@ export default function OrdersPage() {
                     href="/orders/new"
                     className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md"
                 >
-                    📞 New Phone Order
+                    New Phone Order
                 </Link>
             </div>
 
@@ -51,8 +51,8 @@ export default function OrdersPage() {
                             key={status}
                             onClick={() => setFilter(status)}
                             className={`px-4 py-2 rounded-lg font-medium transition-colors ${filter === status
-                                    ? 'bg-blue-600 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                ? 'bg-blue-600 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             {status === 'all' ? 'All Orders' : status}
@@ -110,10 +110,10 @@ export default function OrdersPage() {
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <span
                                             className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${order.status === 'Completed'
-                                                    ? 'bg-green-100 text-green-800'
-                                                    : order.status === 'Pending'
-                                                        ? 'bg-yellow-100 text-yellow-800'
-                                                        : 'bg-red-100 text-red-800'
+                                                ? 'bg-green-100 text-green-800'
+                                                : order.status === 'Pending'
+                                                    ? 'bg-yellow-100 text-yellow-800'
+                                                    : 'bg-red-100 text-red-800'
                                                 }`}
                                         >
                                             {order.status}

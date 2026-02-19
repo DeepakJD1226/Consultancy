@@ -65,7 +65,7 @@ if __name__ == '__main__':
     print(f"\n{'='*50}")
     print(f"🚀 R.K. Textiles Backend Server Starting...")
     print(f"{'='*50}")
-    print(f"📍 Server running on: http://localhost:{port}")
+    print(f"📍 Server running on: http://0.0.0.0:{port}")
     print(f"🔧 Debug mode: {debug}")
     print(f"{'='*50}\n")
     

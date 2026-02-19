@@ -72,17 +72,14 @@ export default function CustomersPage() {
                     {customers.map((customer) => (
                         <div key={customer.id} className="bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
                             <div className="flex items-start justify-between mb-4">
-                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl">
-                                    👤
-                                </div>
                                 <span className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">
                                     {customer.business_type || 'General'}
                                 </span>
                             </div>
                             <h3 className="text-lg font-bold text-gray-900 mb-2">{customer.name}</h3>
-                            <p className="text-gray-600 text-sm mb-1">📞 {customer.phone}</p>
+                            <p className="text-gray-600 text-sm mb-1">Phone: {customer.phone}</p>
                             {customer.address && (
-                                <p className="text-gray-500 text-sm">📍 {customer.address}</p>
+                                <p className="text-gray-500 text-sm">Address: {customer.address}</p>
                             )}
                         </div>
                     ))}

@@ -45,7 +45,7 @@ export default function ReportsPage() {
 
             {/* Sales Report */}
             <div className="mb-8">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">📈 Sales Report</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Sales Report</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <div className="bg-white rounded-lg shadow-md p-6">
                         <p className="text-sm text-gray-600 mb-1">Total Orders</p>
@@ -83,7 +83,7 @@ export default function ReportsPage() {
 
             {/* Inventory Report */}
             <div className="mb-8">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">📦 Inventory Report</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Inventory Report</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <div className="bg-white rounded-lg shadow-md p-6">
                         <p className="text-sm text-gray-600 mb-1">Total Items</p>
@@ -122,7 +122,7 @@ export default function ReportsPage() {
 
             {/* Customer Report */}
             <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-4">👥 Customer Analytics</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Customer Analytics</h2>
                 <div className="bg-white rounded-lg shadow-md p-6">
                     <h3 className="font-bold text-gray-900 mb-4">Top Customers</h3>
                     <div className="space-y-3">

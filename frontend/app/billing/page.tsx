@@ -61,8 +61,8 @@ export default function BillingPage() {
                             key={status}
                             onClick={() => setFilter(status)}
                             className={`px-4 py-2 rounded-lg font-medium transition-colors ${filter === status
-                                    ? 'bg-blue-600 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                ? 'bg-blue-600 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             {status === 'all' ? 'All Bills' : status}
@@ -120,8 +120,8 @@ export default function BillingPage() {
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <span
                                             className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${bill.payment_status === 'Paid'
-                                                    ? 'bg-green-100 text-green-800'
-                                                    : 'bg-yellow-100 text-yellow-800'
+                                                ? 'bg-green-100 text-green-800'
+                                                : 'bg-yellow-100 text-yellow-800'
                                                 }`}
                                         >
                                             {bill.payment_status}
@@ -132,14 +132,14 @@ export default function BillingPage() {
                                             onClick={() => handleDownload(bill.id)}
                                             className="text-blue-600 hover:text-blue-900 font-medium"
                                         >
-                                            📄 Download
+                                            Download
                                         </button>
                                         {bill.payment_status === 'Pending' && (
                                             <button
                                                 onClick={() => handlePaymentUpdate(bill.id, 'Paid')}
                                                 className="text-green-600 hover:text-green-900 font-medium"
                                             >
-                                                ✓ Mark Paid
+                                                Mark Paid
                                             </button>
                                         )}
                                     </td>

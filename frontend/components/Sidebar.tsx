@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const navigation = [
-    { name: 'Dashboard', href: '/', icon: '🏠' },
-    { name: 'Phone Orders', href: '/orders', icon: '📞' },
-    { name: 'Customers', href: '/customers', icon: '👥' },
-    { name: 'Inventory', href: '/inventory', icon: '📦' },
-    { name: 'Bills', href: '/billing', icon: '🧾' },
-    { name: 'Mills', href: '/mills', icon: '🏭' },
-    { name: 'Reports', href: '/reports', icon: '📊' },
+    { name: 'Dashboard', href: '/' },
+    { name: 'Phone Orders', href: '/orders' },
+    { name: 'Customers', href: '/customers' },
+    { name: 'Inventory', href: '/inventory' },
+    { name: 'Bills', href: '/billing' },
+    { name: 'Mills', href: '/mills' },
+    { name: 'Reports', href: '/reports' },
 ];
 
 export default function Sidebar() {
@@ -32,12 +32,11 @@ export default function Sidebar() {
                         <Link
                             key={item.name}
                             href={item.href}
-                            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
-                                    ? 'bg-blue-700 text-white shadow-lg'
-                                    : 'text-blue-100 hover:bg-blue-800 hover:text-white'
+                            className={`flex items-center justify-center px-4 py-3 rounded-lg transition-all ${isActive
+                                ? 'bg-blue-700 text-white shadow-lg'
+                                : 'text-blue-100 hover:bg-blue-800 hover:text-white'
                                 }`}
                         >
-                            <span className="text-xl">{item.icon}</span>
                             <span className="font-medium">{item.name}</span>
                         </Link>
                     );

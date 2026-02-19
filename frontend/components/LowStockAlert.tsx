@@ -12,10 +12,7 @@ export default function LowStockAlert({ count }: LowStockAlertProps) {
             {count > 0 ? (
                 <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
                     <div className="flex items-start">
-                        <div className="flex-shrink-0">
-                            <span className="text-3xl">⚠️</span>
-                        </div>
-                        <div className="ml-3 flex-1">
+                        <div className="flex-1">
                             <h3 className="text-sm font-medium text-red-800">Low Stock Alert</h3>
                             <p className="mt-2 text-sm text-red-700">
                                 <span className="font-bold text-2xl">{count}</span> item{count !== 1 ? 's' : ''} below 50 meters
@@ -32,10 +29,7 @@ export default function LowStockAlert({ count }: LowStockAlertProps) {
             ) : (
                 <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
                     <div className="flex items-start">
-                        <div className="flex-shrink-0">
-                            <span className="text-3xl">✅</span>
-                        </div>
-                        <div className="ml-3">
+                        <div>
                             <h3 className="text-sm font-medium text-green-800">All Good!</h3>
                             <p className="mt-2 text-sm text-green-700">
                                 All inventory items are well stocked
@@ -52,13 +46,13 @@ export default function LowStockAlert({ count }: LowStockAlertProps) {
                         href="/orders/new"
                         className="block w-full bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors text-center"
                     >
-                        📞 New Phone Order
+                        New Phone Order
                     </Link>
                     <Link
                         href="/inventory"
                         className="block w-full bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors text-center"
                     >
-                        📦 View Inventory
+                        View Inventory
                     </Link>
                 </div>
             </div>

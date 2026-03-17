@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-50:   #f0f9ff;
+    --brand-100:  #e0f2fe;
+    --brand-500:  #0891b2;
+    --brand-600:  #0e7490;
+    --brand-700:  #155e75;
+    --rk-bg:        #f8fafc;
+    --rk-surface:   #ffffff;
+    --rk-surface-2: #f1f5f9;
+    --rk-border:    #dbeafe;
+    --rk-text:      #0f172a;
+    --rk-text-md:   #334155;
+    --rk-muted:     #64748b;
+    --rk-accent:    #0e7490;
+    --rk-accent-h:  #155e75;
+    --rk-ring:      rgba(14,116,144,.22);
+    /* legacy aliases */
+    --surface: var(--rk-surface);
+    --surface-soft: var(--rk-bg);
+    --surface-raised: var(--rk-surface-2);
+    --ink-900: var(--rk-text);
+    --ink-700: var(--rk-text-md);
+    --muted: var(--rk-muted);
+    --line: var(--rk-border);
+    --ring: var(--rk-ring);
+  }
+
+  :root[data-theme='dark'] {
+    --rk-bg:        #0f172a;
+    --rk-surface:   #1e293b;
+    --rk-surface-2: #162032;
+    --rk-border:    #334155;
+    --rk-text:      #f1f5f9;
+    --rk-text-md:   #cbd5e1;
+    --rk-muted:     #94a3b8;
+    --rk-accent:    #22d3ee;
+    --rk-accent-h:  #06b6d4;
+    --rk-ring:      rgba(34,211,238,.22);
+    /* legacy aliases */
+    --surface: var(--rk-surface);
+    --surface-soft: var(--rk-bg);
+    --surface-raised: var(--rk-surface-2);
+    --ink-900: var(--rk-text);
+    --ink-700: var(--rk-text-md);
+    --muted: var(--rk-muted);
+    --line: var(--rk-border);
+    --ring: var(--rk-ring);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--ink-900);
+    background:
+      radial-gradient(circle at 0% 0%, rgba(125, 211, 252, 0.25), transparent 35%),
+      radial-gradient(circle at 100% 10%, rgba(94, 234, 212, 0.18), transparent 30%),
+      linear-gradient(180deg, var(--surface-soft) 0%, var(--surface-raised) 100%);
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Sora', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .rk-page-surface {
+    color: var(--ink-900);
+  }
+
+  .rk-nav {
+    @apply backdrop-blur-md border-b;
+    background-color: var(--rk-surface);
+    border-color: var(--rk-border);
+  }
+
+  .rk-card {
+    @apply border rounded-2xl;
+    background-color: var(--rk-surface);
+    border-color: var(--rk-border);
+    box-shadow: 0 4px 24px rgba(0,0,0,.06);
+  }
+  [data-theme='dark'] .rk-card {
+    box-shadow: 0 4px 24px rgba(0,0,0,.35);
+  }
+
+  .rk-title {
+    color: var(--ink-900);
+  }
+
+  .rk-text {
+    color: var(--ink-900);
+  }
+
+  .rk-text-muted {
+    color: var(--muted);
+  }
+
+  .rk-input {
+    @apply w-full px-4 py-2 border rounded-lg outline-none transition;
+    color: var(--rk-text);
+    background-color: var(--rk-surface);
+    border-color: var(--rk-border);
+  }
+
+  .rk-input:focus {
+    box-shadow: 0 0 0 4px var(--ring);
+    border-color: var(--brand-500);
+  }
+
+  .rk-btn-primary {
+    @apply px-6 py-2.5 rounded-lg text-white font-medium transition disabled:opacity-60 disabled:cursor-not-allowed;
+    background-color: var(--rk-accent);
+  }
+
+  .rk-btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background-color: var(--rk-accent-h);
+    box-shadow: 0 8px 20px rgba(8,145,178,.25);
+  }
+
+  .rk-btn-secondary {
+    @apply px-6 py-2.5 rounded-lg border font-medium transition;
+    border-color: var(--rk-border);
+    color: var(--rk-text-md);
+    background-color: var(--rk-surface);
+  }
+
+  .rk-btn-secondary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background-color: var(--rk-surface-2);
+  }
+
+  .rk-hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .rk-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(2,132,199,.15);
+  }
+  [data-theme='dark'] .rk-hover-lift:hover {
+    box-shadow: 0 16px 34px rgba(34,211,238,.12);
+  }
+
+  .rk-fade-up {
+    animation: rk-fade-up 0.4s ease-out;
+  }
+}
+
+/* ── Global dark-mode overrides for Tailwind hardcoded color classes ─────── */
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+[data-theme='dark'] .text-gray-900,
+[data-theme='dark'] .text-slate-900  { color: #f1f5f9 !important; }
+[data-theme='dark'] .text-gray-800,
+[data-theme='dark'] .text-slate-800  { color: #e2e8f0 !important; }
+[data-theme='dark'] .text-gray-700,
+[data-theme='dark'] .text-slate-700,
+[data-theme='dark'] .text-gray-600,
+[data-theme='dark'] .text-slate-600  { color: #cbd5e1 !important; }
+[data-theme='dark'] .text-gray-500,
+[data-theme='dark'] .text-slate-500  { color: #94a3b8 !important; }
+
+[data-theme='dark'] .bg-white        { background-color: #1e293b !important; }
+[data-theme='dark'] .bg-gray-50,
+[data-theme='dark'] .bg-slate-50     { background-color: #162032 !important; }
+[data-theme='dark'] .bg-gray-100,
+[data-theme='dark'] .bg-slate-100    { background-color: #1e293b !important; }
+[data-theme='dark'] .bg-blue-50      { background-color: rgba(30,58,138,.18) !important; }
+[data-theme='dark'] .bg-green-50     { background-color: rgba(20,83,45,.18) !important; }
+[data-theme='dark'] .bg-red-50       { background-color: rgba(127,29,29,.18) !important; }
+[data-theme='dark'] .bg-emerald-50   { background-color: rgba(6,78,59,.18) !important; }
+[data-theme='dark'] .bg-yellow-50    { background-color: rgba(113,63,18,.18) !important; }
+[data-theme='dark'] .bg-cyan-50      { background-color: rgba(22,78,99,.18) !important; }
+[data-theme='dark'] .bg-purple-50    { background-color: rgba(88,28,135,.18) !important; }
+
+[data-theme='dark'] .border-gray-100,
+[data-theme='dark'] .border-gray-200,
+[data-theme='dark'] .border-gray-300,
+[data-theme='dark'] .border-slate-200 { border-color: #334155 !important; }
+
+[data-theme='dark'] input:not([class*='dark']),
+[data-theme='dark'] textarea:not([class*='dark']),
+[data-theme='dark'] select:not([class*='dark']) {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border-color: #475569;
+}
+
+@keyframes rk-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
